@@ -1,0 +1,43 @@
+---
+name: temurin-jdk-11
+description: |
+  Eclipse Temurin is the open source Java SE build based upon OpenJDK.
+  Temurin is available for a wide range of platforms and Java SE versions.
+homepage: https://github.com/eclipse/eclipse.jdt.ls
+licenses:
+  - GPL-2.0
+languages:
+  - Java
+categories:
+  - Runtime
+
+source:
+  id: pkg:generic/java/temurin@11.0.27+6
+  download:
+    - target: darwin_arm64
+      files:
+        openjdk-11.0.27.tar.gz: https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.27%2B6/OpenJDK11U-jdk_aarch64_mac_hotspot_11.0.27_6.tar.gz
+      bin: jdk-11.0.27+6/Contents/Home/bin/java
+
+    - target: darwin_x64
+      files:
+        openjdk-11.0.27.tar.gz: https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.27%2B6/OpenJDK11U-jdk_x64_mac_hotspot_11.0.27_6.tar.gz
+      bin: jdk-11.0.27+6/Contents/Home/bin/java
+
+    - target: linux_x64
+      files:
+        openjdk-11.0.27.tar.gz: https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.27%2B6/OpenJDK11U-jdk_x64_linux_hotspot_11.0.27_6.tar.gz
+      bin: jdk-11.0.27+6/bin/java
+
+    - target: linux_arm64
+      files:
+        openjdk-11.0.27.tar.gz: https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.27%2B6/OpenJDK11U-jdk_aarch64_linux_hotspot_11.0.27_6.tar.gz
+      bin: jdk-11.0.27+6/bin/java
+
+    - target: win
+      files:
+        openjdk-11.0.27.zip: https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.27%2B6/OpenJDK11U-jdk_x64_windows_hotspot_11.0.27_6.zip
+      bin: jdk-11.0.27+6/bin/java.exe
+
+bin:
+  java: "{{source.download.bin}}"
