@@ -1,0 +1,47 @@
+---
+name: temurin-jdk-latest
+description: |
+  Eclipse Temurin is the open source Java SE build based upon OpenJDK.
+  Temurin is available for a wide range of platforms and Java SE versions.
+  !! THIS PACKAGE ONLY FOR THE LATEST JDK RELEASE !!
+homepage: https://adoptium.net/temurin/releases
+licenses:
+  - GPL-2.0
+languages:
+  - Java
+categories:
+  - Runtime
+
+source:
+  id: pkg:generic/java/temurin@latest
+  download:
+    - target: darwin_arm64
+      files:
+        openjdk-24.0.1.tar.gz: https://github.com/adoptium/temurin24-binaries/releases/download/jdk-24.0.1%2B9/OpenJDK24U-jdk_aarch64_mac_hotspot_24.0.1_9.tar.gz
+      content: jdk-24.0.1+9/Contents/Home/
+
+    - target: darwin_x64
+      files:
+        openjdk-24.0.1.tar.gz: https://github.com/adoptium/temurin24-binaries/releases/download/jdk-24.0.1%2B9/OpenJDK24U-jdk_x64_mac_hotspot_24.0.1_9.tar.gz
+      content: jdk-24.0.1+9/Contents/Home/
+
+    - target: linux_x64
+      files:
+        openjdk-24.0.1.tar.gz: https://github.com/adoptium/temurin24-binaries/releases/download/jdk-24.0.1%2B9/OpenJDK24U-jdk_x64_linux_hotspot_24.0.1_9.tar.gz
+      content: jdk-24.0.1+9/
+
+    - target: linux_arm64
+      files:
+        openjdk-24.0.1.tar.gz: https://github.com/adoptium/temurin24-binaries/releases/download/jdk-24.0.1%2B9/OpenJDK24U-jdk_aarch64_linux_hotspot_24.0.1_9.tar.gz
+      content: jdk-24.0.1+9/
+
+    - target: win
+      files:
+        openjdk-24.0.1.zip: https://github.com/adoptium/temurin24-binaries/releases/download/jdk-24.0.1%2B9/OpenJDK24U-jdk_x64_windows_hotspot_24.0.1_9.zip
+      content: jdk-24.0.1+9/
+
+opt:
+  jdk/temurin/latest/: "{{source.download.content}}"
+
+bin:
+  java: "{{source.download.content}}/bin/java"
