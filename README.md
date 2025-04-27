@@ -6,3 +6,4 @@ This mason registry extended some JVM related packages from original
 ## Whats new?
 
 - [TemurinJDK](./docs/temurin.md): All LTS and latest TemurinJDK
+- [lombok-edge](./docs/lombok.md): Edge version of lombok
