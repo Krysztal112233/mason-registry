@@ -7,3 +7,4 @@ This mason registry extended some JVM related packages from original
 
 - [TemurinJDK](./docs/temurin.md): All LTS and latest TemurinJDK
 - [lombok-edge](./docs/lombok.md): Edge version of lombok
+- async-profiler

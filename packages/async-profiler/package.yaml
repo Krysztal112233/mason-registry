@@ -1,0 +1,38 @@
+---
+name: async-profiler
+description: |
+  Sampling CPU and HEAP profiler for Java featuring AsyncGetCallTrace + perf_events 
+homepage: https://github.com/async-profiler/async-profiler
+licenses:
+  - Apache-2.0
+languages:
+  - Java
+categories:
+  - Runtime
+
+source:
+  id: pkg:generic/async-profiler@latest
+  download:
+    - target: darwin_arm64
+      files:
+        async-profiler-4.0-macos.zip: https://github.com/async-profiler/async-profiler/releases/download/v4.0/async-profiler-4.0-macos.zip
+      content: async-profiler-4.0-macos/
+
+    - target: darwin_x64
+      files:
+        async-profiler-4.0-macos.zip: https://github.com/async-profiler/async-profiler/releases/download/v4.0/async-profiler-4.0-macos.zip
+      content: async-profiler-4.0-macos/
+
+    - target: linux_x64
+      files:
+         async-profiler-4.0-linux-x64.tar.gz: https://github.com/async-profiler/async-profiler/releases/download/v4.0/async-profiler-4.0-linux-x64.tar.gz
+      content: async-profiler-4.0-linux-x64/
+
+    - target: linux_arm64
+      files:
+        async-profiler-4.0-linux-arm64.tar.gz: https://github.com/async-profiler/async-profiler/releases/download/v4.0/async-profiler-4.0-linux-arm64.tar.gz
+      content: async-profiler-4.0-linux-arm64/
+
+bin:
+  asprof: "{{source.download.content}}/bin/asprof"
+  jfrconv: "{{source.download.content}}/bin/jfrconv"
